@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    input{
+        margin-bottom: 10px;
+    }
+    form{
+        width: 250px;
+    }
+</style>
+<body>
+<form>
+    <h2>Calculator</h2>
+        <table>
+            <tr>
+                <td colspan="2"><input id="1" type="number" placeholder="nhập số" size="50px"></td>
+                <td colspan="2"><input id="2" type="number" placeholder="nhập số" size="50px"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="inputOperasion('cong')">Addition(+)</button>
+                </td>
+                <td>
+                    <button type="button" onclick="inputOperasion('tru')">Subtraction(-)</button>
+                </td>
+                <td>
+                    <button type="button" onclick="inputOperasion('nhan')">Multiplication(*)</button>
+                </td>
+                <td>
+                    <button type="button" onclick="inputOperasion('chia')">Division(/)</button>
+                </td>
+            </tr>
+        </table>
+        <p id="result">Result Division: </p>
+</form>
+<script>
+    function inputOperasion(pheptinh) {
+        let a = +document.getElementById('1').value;
+        let b = +document.getElementById('2').value;
+        let ketqua = 0;
+        let result = 'Result Division: ';
+        switch (pheptinh) {
+            case 'cong':
+                ketqua = a + b;
+                document.getElementById('result').innerText = result + ketqua;
+                break;
+            case 'tru':
+                ketqua = a - b;
+                document.getElementById('result').innerText = result + ketqua;
+                break;
+            case 'nhan':
+                ketqua = a * b;
+                document.getElementById('result').innerText = result + ketqua;
+                break;
+            case 'chia':
+                ketqua = a / b;
+                document.getElementById('result').innerText = result + ketqua;
+                break;
+        }
+    }
+</script>
+</body>
+</html>
